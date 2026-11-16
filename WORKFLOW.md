@@ -29,3 +29,6 @@ Round 1 featured synchronous submission without button disabling, risking duplic
 
 ## Review Effort & Verification Loop
 While Round 1 generated initial code in 45 seconds, reviewing and identifying its subtle validation and accessibility bugs required over 15 minutes of manual auditing. Round 2 took approximately 3 minutes to specify, but its automated Vitest suite caught errors immediately (including a boundary string length check) and verified correctness in 5.4 seconds. Round 2 felt slower upfront, but was dramatically faster end-to-end with zero residual review debt.
+
+## Tool Divergence & v0 Comparison (Optional)
+When evaluating UI generation tools like v0 against our specification-driven workflow, v0 generated visually polished shadcn/ui primitives instantly, but defaulted to basic HTML5 constraint validation without custom schema parsing. Across different frontier models, the primary divergence occurred in state management: unconstrained models defaulted to fragmented useState hooks, whereas the specification forced a unified schema architecture. Without explicit verification loops, all models missed edge-case input sanitization.
